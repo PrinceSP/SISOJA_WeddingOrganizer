@@ -3,14 +3,12 @@ import {View,Text,StyleSheet,ScrollView} from 'react-native'
 import {Buttons} from '../../components'
 import {GetStartedBG} from '../../assets'
 
-const GetStarted = ()=>{
+const GetStarted = ({navigation})=>{
   return(
     <View style={style.container}>
       <GetStartedBG style={style.bg}/>
       <Text style={style.title}>Love Can Change Your World</Text>
-      <Buttons color="#000" title='Get Started' bgColor='#fff' radius={50} onPress={()=>{
-          console.log('Prince');
-        }}/>
+      <Buttons color="#000" title='Get Started' bgColor='#fff' radius={50} onPress={()=>navigation.replace('Login')}/>
     </View>
   )
 }
