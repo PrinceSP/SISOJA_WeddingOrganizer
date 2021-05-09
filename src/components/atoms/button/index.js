@@ -1,15 +1,15 @@
 import React from 'react'
 import {TouchableOpacity,Text,View,StyleSheet} from 'react-native'
 
-const Buttons = ({title,color,bgColor,radius,onPress}) => {
+const Buttons = ({width,title,color,bgColor,radius,onPress,height,position,top}) => {
   const style = StyleSheet.create({
     container:{
       backgroundColor:bgColor,
       borderRadius:radius,
-      height:70,
-      width:204,
-      position:'absolute',
-      top:550,
+      height:height,
+      width:width,
+      position:position,
+      top:top,
       alignItems:'center',
       justifyContent:'center'
     },
