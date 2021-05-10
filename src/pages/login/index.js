@@ -8,6 +8,7 @@ import FlashMessage,{showMessage} from 'react-native-flash-message'
 const Login = ({navigation}) => {
   const [email,setEmail] = useState('')
   const [password,setPass] = useState('')
+  const image = {uri:`${LoginBG}`}
   const submit=()=>{
     firebase.auth().signInWithEmailAndPassword(email,password)
     .then(res=>{
