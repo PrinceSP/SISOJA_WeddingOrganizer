@@ -1,14 +1,14 @@
 import firebase from 'firebase'
 
 var firebaseConfig = {
-    apiKey: "AIzaSyBZI3fFY2eReaYYQSUN5whlZp0viKDXrUs",
-    authDomain: "sisoja-b47ea.firebaseapp.com",
-    projectId: "sisoja-b47ea",
-    storageBucket: "sisoja-b47ea.appspot.com",
-    messagingSenderId: "514666821742",
-    appId: "1:514666821742:web:49dfc467dc3b2b279fce7f"
-  };
+  apiKey: "AIzaSyBtCW7apEFtaAnTp2tyqCkPgNCb3275YLE",
+  authDomain: "sisoja-wo.firebaseapp.com",
+  projectId: "sisoja-wo",
+  storageBucket: "sisoja-wo.appspot.com",
+  messagingSenderId: "450529785388",
+  appId: "1:450529785388:web:1aba86569ea35baa920389"
+};
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 export default firebase

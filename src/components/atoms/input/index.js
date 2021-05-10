@@ -1,7 +1,7 @@
 import React from 'react'
 import {TextInput,View,StyleSheet} from 'react-native'
 
-const Inputs = ({holder}) => {
+const Inputs = ({holder,value,onChangeText}) => {
   const style = StyleSheet.create({
     container:{
       backgroundColor:'#fff',
@@ -14,7 +14,7 @@ const Inputs = ({holder}) => {
     }
   })
   return (
-    <TextInput style={style.container} placeholder={holder}/>
+    <TextInput style={style.container} placeholder={holder} value={value} onChangeText={onChangeText}/>
   )
 }
 
