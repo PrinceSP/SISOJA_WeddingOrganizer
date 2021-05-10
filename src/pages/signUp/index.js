@@ -4,6 +4,7 @@ import {RegBG} from '../../assets'
 import {RegisMol,WeddingTitle} from '../../components'
 
 const SignUp = () => {
+
   const style = StyleSheet.create({
     container:{
       flex:1,
@@ -15,7 +16,7 @@ const SignUp = () => {
     }
   })
   return (
-    <ScrollView>
+    <ScrollView showVerticalScrollIndicator={false}>
       <View style={style.container}>
         <RegBG/>
         <WeddingTitle/>
