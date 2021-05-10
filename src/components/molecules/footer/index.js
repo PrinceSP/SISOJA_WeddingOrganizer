@@ -8,7 +8,7 @@ const Footer = () => {
     }
   })
   return (
-    <View style={{position:'absolute',alignItems:'center',bottom:20}}>
+    <View style={{position:'absolute',alignItems:'center',top:650}}>
       <Text style={style.text}>By continuing, you agree to our</Text>
       <Text style={style.text}>Terms of Service · Privacy Policy · Content Policy</Text>
     </View>

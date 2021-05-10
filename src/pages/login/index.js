@@ -3,12 +3,11 @@ import {ScrollView,View,StyleSheet,Text} from 'react-native'
 import {LoginBG} from '../../assets'
 import {LoginMol,Buttons,Footer,WeddingTitle} from '../../components'
 import firebase from '../../config/firebase'
-import {showMessage} from 'react-native-flash-message'
+import FlashMessage,{showMessage} from 'react-native-flash-message'
 
 const Login = ({navigation}) => {
   const [email,setEmail] = useState('')
   const [password,setPass] = useState('')
-
   const submit=()=>{
     firebase.auth().signInWithEmailAndPassword(email,password)
     .then(res=>{
@@ -16,12 +15,21 @@ const Login = ({navigation}) => {
       setEmail('')
       setPass('')
     })
+    .catch(err=>{
+      console.log(err);
+      showMessage({
+        message:err.message,
+        type:'default',
+        backgroundColor:'#d9435e',
+        color:'#fff'
+      })
+    })
   }
 
   return (
     <ScrollView>
       <View style={style.container}>
-        <LoginBG style={{flex:1}}/>
+        <LoginBG/>
         <WeddingTitle/>
         <LoginMol
           valEmail={email}
@@ -33,6 +41,7 @@ const Login = ({navigation}) => {
         <Text style={style.or}>OR</Text>
         <Buttons position='absolute' top={500} width={362} title='Sign Up' bgColor='#FF8527' color='#fff' radius={8} height={54} onPress={()=>navigation.navigate('SignUp')}/>
         <Footer/>
+        <FlashMessage position="top"/>
       </View>
     </ScrollView>
   )
@@ -43,13 +52,12 @@ export default Login
 const style = StyleSheet.create({
   container:{
     alignItems:'center',
-    flex:1,
     flexDirection:'column',
   },
   or:{
     fontSize:19,
     position:'absolute',
-    bottom:245,
+    top:445,
     color:'#444'
   }
 })
