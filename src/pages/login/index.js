@@ -1,14 +1,17 @@
 import React from 'react'
 import {ScrollView,View,StyleSheet,Text} from 'react-native'
 import {LoginBG} from '../../assets'
-import {LoginMol} from '../../components'
+import {LoginMol,Buttons,Footer,WeddingTitle} from '../../components'
 
 const Login = ({navigation}) => {
   return (
     <View style={style.container}>
       <LoginBG/>
-      <Text style={style.title}>Wedding</Text>
+      <WeddingTitle/>
       <LoginMol/>
+      <Text style={{fontSize:19,position:'absolute',bottom:245,color:'#444'}}>OR</Text>
+      <Buttons position='absolute' top={500} width={362} title='Sign Up' bgColor='#FF8527' color='#fff' radius={8} height={54} onPress={()=>navigation.navigate('SignUp')}/>
+      <Footer/>
     </View>
   )
 }
@@ -20,17 +23,5 @@ const style = StyleSheet.create({
     alignItems:'center',
     flex:1,
     flexDirection:'column',
-  },
-  title:{
-    alignItems:'center',
-    justifyContent:'center',
-    position:'absolute',
-    top:150,
-    fontSize: 74,
-    fontFamily:"Sofia-Regular",
-    color:"#fff",
-    textShadowColor: '#ff2131',
-    textShadowOffset: {width: -1, height: 1},
-    textShadowRadius: 25
   }
 })
