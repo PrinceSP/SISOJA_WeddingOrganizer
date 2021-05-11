@@ -12,7 +12,7 @@ const Login = ({navigation}) => {
   const submit=()=>{
     firebase.auth().signInWithEmailAndPassword(email,password)
     .then(res=>{
-      navigation.replace('Discover')
+      navigation.replace('Home')
       setEmail('')
       setPass('')
     })

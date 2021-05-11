@@ -2,6 +2,6 @@ import GetStarted from './getStarted'
 import Splash from './splash'
 import Login from './login'
 import SignUp from './signUp'
-import Discover from './discover'
+import Home from './home'
 
-export {Splash,GetStarted,Login,SignUp,Discover}
+export {Splash,GetStarted,Login,SignUp,Home}

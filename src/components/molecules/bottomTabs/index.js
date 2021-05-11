@@ -4,13 +4,14 @@ import {ProfileUnactive,CartUnactive,Home} from '../../../assets'
 
 const BottomTabs = () => {
   return (
-    <View style={{alignItems:'center',
-      justifyContent:'space-between',
+    <View style={{
+      alignItems:'center',
+      justifyContent:'space-around',
       flexDirection:'row',
-      width:263,
+      width:'100%',
       position:'absolute',
       bottom:0,
-      left:50}}>
+      backgroundColor:'#fff'}}>
       <TouchableOpacity>
         <Home/>
       </TouchableOpacity>
