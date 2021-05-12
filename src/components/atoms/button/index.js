@@ -1,7 +1,7 @@
 import React from 'react'
 import {TouchableOpacity,Text,View,StyleSheet} from 'react-native'
 
-const Buttons = ({width,title,color,bgColor,radius,onPress,height,position,top}) => {
+const Buttons = ({fSize,width,title,color,bgColor,radius,onPress,height,position,top}) => {
   const style = StyleSheet.create({
     container:{
       backgroundColor:bgColor,
@@ -16,7 +16,7 @@ const Buttons = ({width,title,color,bgColor,radius,onPress,height,position,top})
     t:{
       color:color,
       fontFamily:"Cairo-SemiBold",
-      fontSize:20
+      fontSize:fSize
     }
   })
   return (

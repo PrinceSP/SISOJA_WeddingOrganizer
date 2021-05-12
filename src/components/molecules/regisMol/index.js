@@ -25,12 +25,16 @@ const RegisMol = () => {
   })
 
   const submit=()=>{
-
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(res=>{
       const UserID = res.user.uid
       const datas = {
         fullname,email,password,job,date
+      }
+      if (res.user) {
+        res.user.updateProfile({
+          displayName: fullname,
+        })
       }
       firebase.database().ref(`users/${UserID}`).set(datas)
       setFullname('')
@@ -60,7 +64,8 @@ const RegisMol = () => {
       <Inputs holder='Job' value={job} onChangeText={value=>setJob(value)}/>
       <Text style={style.text}>Date of Birth</Text>
       <DatePicker date={date} onDateChange={setDate} mode='date' textColor="#000" backgroundColor="#fff" marginBottom={20}/>
-      <Buttons width={362} title='Sign Up' bgColor='#FF8527' color='#fff' radius={8} height={54} onPress={submit}/>
+      <Buttons fSize={20} width={362} title='Sign Up' bgColor='#FF8527' color='#fff' radius={8} height={54} onPress={submit}/>
+      <FlashMessage position="top"/>
     </View>
   )
 }

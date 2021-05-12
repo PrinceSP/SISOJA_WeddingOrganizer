@@ -9,6 +9,7 @@ const Login = ({navigation}) => {
   const [email,setEmail] = useState('')
   const [password,setPass] = useState('')
   const image = {uri:`${LoginBG}`}
+
   const submit=()=>{
     firebase.auth().signInWithEmailAndPassword(email,password)
     .then(res=>{
@@ -40,7 +41,7 @@ const Login = ({navigation}) => {
           onPress={submit}
           />
         <Text style={style.or}>OR</Text>
-        <Buttons position='absolute' top={500} width={362} title='Sign Up' bgColor='#FF8527' color='#fff' radius={8} height={54} onPress={()=>navigation.navigate('SignUp')}/>
+        <Buttons fSize={20} position='absolute' top={500} width={362} title='Sign Up' bgColor='#FF8527' color='#fff' radius={8} height={54} onPress={()=>navigation.navigate('SignUp')}/>
         <Footer/>
         <FlashMessage position="top"/>
       </View>

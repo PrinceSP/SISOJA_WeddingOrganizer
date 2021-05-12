@@ -8,7 +8,7 @@ const GetStarted = ({navigation})=>{
     <View style={style.container}>
       <GetStartedBG/>
       <Text style={style.title}>Love Can Change Your World</Text>
-      <Buttons top={550} width={204} position='absolute' color="#000" title='Get Started' bgColor='#fff' radius={50} height={70} onPress={()=>navigation.replace('Login')}/>
+      <Buttons fSize={20} top={550} width={204} position='absolute' color="#000" title='Get Started' bgColor='#fff' radius={50} height={70} onPress={()=>navigation.replace('Login')}/>
     </View>
   )
 }
