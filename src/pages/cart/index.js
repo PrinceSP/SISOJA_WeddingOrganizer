@@ -5,7 +5,7 @@ import {BottomTabs,Header,Gaps} from '../../components'
 const Cart = ({navigation}) => {
   return (
     <View style={{flex:1,backgroundColor:'#fff'}}>
-      <Header title='Cart' burger={true} left={180}/>
+      <Header title='CART' burger={true} left={180}/>
       <Gaps/>
       <Text>Cart</Text>
       <BottomTabs
