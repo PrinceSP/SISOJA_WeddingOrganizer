@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {View,Text,StyleSheet} from 'react-native'
 import {Packet1,Packet2,Packet3} from '../../../assets'
-import {Buttons} from '../../../components'
+import {Buttons,Items} from '../../../components'
 const Packets = ({title,price,one,two,three,four,five,choose}) => {
   const images = [Packet1,Packet2,Packet3]
 
@@ -16,7 +16,7 @@ const Packets = ({title,price,one,two,three,four,five,choose}) => {
   }
 
   const addToCart=()=>{
-    console.log(true);
+
   }
 
   return (
@@ -33,7 +33,7 @@ const Packets = ({title,price,one,two,three,four,five,choose}) => {
           <Text>{four}</Text>
           <Text>{five}</Text>
         </View>
-        <Buttons title='mofe info' fSize={18} height={50} width={100} bgColor="#77acf1" position='absolute' top={280} radius={30} color='#fff' onPress={addToCart}/>
+        <Buttons title='add to cart' fSize={18} height={50} width={120} bgColor="#77acf1" position='absolute' top={280} radius={30} color='#fff' onPress={addToCart}/>
       </View>
     </View>
   )

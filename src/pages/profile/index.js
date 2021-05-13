@@ -31,17 +31,38 @@ const Profile = ({navigation}) => {
       justifyContent:'center'
     },
     textCont:{
-
+      height:250,
+      width:300,
+      backgroundColor:'#eee',
+      borderRadius:10,
+      alignItems:'center',
+      justifyContent:'center'
     },
     text:{
       fontSize:20,
-      fontFamily:'Cairo-SemiBold'
+      fontFamily:'Cairo-SemiBold',
+      color:'#444',
+      borderRadius:10,
+      borderColor:'#444',
+      borderStyle:'solid',
+      borderWidth:2,
+      height:40,
+      width:250,
+      textAlign:'center',
+      marginBottom:10
+    },
+    text1:{
+      fontWeight:'bold',
+      fontSize:21,
+      fontFamily:'Cairo-SemiBold',
+      color:'#444',
+      marginBottom:20
     }
   })
 
   return (
     <View style={{flex:1,backgroundColor:'#fff'}}>
-      <Header title='PROFILE' burger={true} left={155}/>
+      <Header title='MY PROFILE' burger={true} left={145}/>
       <Gaps/>
       {
         current &&
@@ -50,9 +71,9 @@ const Profile = ({navigation}) => {
             <Image style={{height:120,width:120,borderRadius:60}} source={{uri:profile.photo}}/>
           </View>
           <View style={style.textCont}>
-            <Text style={style.text}>Name: {profile.fullname}</Text>
-            <Text style={style.text}>Email: {profile.email}</Text>
-            <Text style={style.text}>Job: {profile.job}</Text>
+            <Text style={style.text1}>{profile.fullname}</Text>
+            <Text style={style.text}>{profile.email}</Text>
+            <Text style={style.text}>{profile.job}</Text>
           </View>
         </View>
       }
