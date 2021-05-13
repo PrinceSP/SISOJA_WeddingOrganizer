@@ -1,8 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {View,Text,StyleSheet} from 'react-native'
 import {Burger} from '../../../assets'
 
-const Header = () => {
+const Header = ({title,burger,left}) => {
   const style=StyleSheet.create({
     container:{
       alignItems:'center',
@@ -14,15 +14,17 @@ const Header = () => {
     },
     text:{
       position:'absolute',
-      left:140,
+      left:left,
       fontSize:21,
       fontWeight:'bold'
     }
   })
   return (
     <View style={style.container}>
-      <Burger style={{position:'absolute',left:22}}/>
-      <Text style={style.text}>SISOJA WO</Text>
+      {
+        burger && <Burger style={{position:'absolute',left:22}}/>
+      }
+      <Text style={style.text}>{title}</Text>
     </View>
   )
 }

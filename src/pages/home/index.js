@@ -2,10 +2,11 @@ import React from 'react'
 import {View,Text,ScrollView} from 'react-native'
 import {Header,Gaps,BottomTabs,Packets,Buttons} from '../../components'
 import {Packet1,Packet2,Packet3} from '../../assets'
-const Home = () => {
+
+const Home = ({navigation}) => {
   return (
     <View style={{flex:1,backgroundColor:'#fff'}}>
-      <Header/>
+      <Header title='SISOJA WO' burger={true} left={140}/>
       <Gaps/>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{marginTop:25,marginHorizontal:33,marginBottom:100}}>
@@ -34,7 +35,10 @@ const Home = () => {
             choose={3}/>
         </View>
       </ScrollView>
-      <BottomTabs/>
+      <BottomTabs
+        home={()=>navigation.navigate('Home')}
+        cart={()=>navigation.navigate('Cart')}
+        profile={()=>navigation.navigate('Profile')}/>
     </View>
   )
 }

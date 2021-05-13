@@ -1,15 +1,15 @@
 import React from 'react'
-import {View,Text,StyleSheet,ScrollView} from 'react-native'
+import {View,Text,StyleSheet,ScrollView,Dimensions} from 'react-native'
 import {RegBG} from '../../assets'
 import {RegisMol,WeddingTitle} from '../../components'
 
-const SignUp = () => {
-
+const SignUp = ({navigation}) => {
   const style = StyleSheet.create({
     container:{
       flex:1,
       alignItems:'center',
-      flexDirection:'column'
+      flexDirection:'column',
+
     },
     greyCon:{
       backgroundColor:'#535353'
@@ -18,10 +18,10 @@ const SignUp = () => {
   return (
     <ScrollView showVerticalScrollIndicator={false}>
       <View style={style.container}>
-        <RegBG/>
+        <RegBG height={1100}/>
         <WeddingTitle/>
         <View style={style.greyCon}/>
-        <RegisMol/>
+        <RegisMol nav={navigation}/>
       </View>
     </ScrollView>
   )
