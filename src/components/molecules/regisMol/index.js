@@ -55,7 +55,7 @@ const RegisMol = ({nav}) => {
     .then(res=>{
       const UserID = res.user.uid
       const datas = {
-        photo:photoBase64,fullname,email,password,job,date
+        photo:photoBase64,fullname,email,password,job,date,title:'',price:'',text:''
       }
 
       if (res.user) {

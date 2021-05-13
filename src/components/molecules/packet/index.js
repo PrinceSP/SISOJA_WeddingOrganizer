@@ -2,8 +2,10 @@ import React,{useState} from 'react'
 import {View,Text,StyleSheet} from 'react-native'
 import {Packet1,Packet2,Packet3} from '../../../assets'
 import {Buttons,Items} from '../../../components'
+import firebase from '../../../config/firebase'
+
 const Packets = ({title,price,one,two,three,four,five,choose}) => {
-  const images = [Packet1,Packet2,Packet3]
+  const images = [Packet1,Packet2,Packet3];
 
   let image;
 
@@ -16,7 +18,16 @@ const Packets = ({title,price,one,two,three,four,five,choose}) => {
   }
 
   const addToCart=()=>{
-
+    const itemDatas = {
+      title:title,
+      price:price,
+      text:'Wedding & Pre-Wedding'
+    }
+    const current = firebase.auth().currentUser;
+    firebase.database().ref(`/users/${current.uid}`).update(itemDatas)
+    .then(res=>{
+      console.log(res);
+    })
   }
 
   return (
