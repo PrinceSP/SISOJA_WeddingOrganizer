@@ -2,6 +2,7 @@ import React,{useEffect,useState,useRef} from 'react'
 import {View,Text,Image,StyleSheet,Modal} from 'react-native'
 import {BottomTabs,Header,Gaps,Buttons} from '../../components'
 import firebase from '../../config/firebase'
+import FlashMessage,{showMessage} from 'react-native-flash-message'
 
 const Cart = ({navigation}) => {
   const [currentUser,setCurrentUser] = useState()
@@ -52,14 +53,12 @@ const Cart = ({navigation}) => {
   const submit=()=>{
     console.log(true);
     firebase.database().ref(`/users/${current.uid}`).update({title:'',price:'',text:''})
-
-    return(
-      <Modal visible={modalOpen} animationType='slide'>
-        <View style={style.modalCont}>
-          <Text>Order Successfull</Text>
-        </View>
-      </Modal>
-    )
+    showMessage({
+      message:'Order Successful',
+      type:'default',
+      backgroundColor:'lightgreen',
+      color:'#000'
+    })
   }
 
   return (
@@ -83,6 +82,7 @@ const Cart = ({navigation}) => {
           <Text style={{fontSize:20}}>List is empty</Text>
         </View>
       }
+      <FlashMessage position="top"/>
       <BottomTabs
         home={()=>navigation.navigate('Home')}
         cart={()=>navigation.navigate('Cart')}
