@@ -61,7 +61,7 @@ const RegisMol = ({nav}) => {
       if (res.user) {
         res.user.updateProfile({
           displayName: fullname,
-          photoUrl:datas.photo
+          photoUrl: photo
         })
       }
 

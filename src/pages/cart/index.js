@@ -1,11 +1,12 @@
 import React from 'react'
 import {View,Text} from 'react-native'
-import {BottomTabs,Header} from '../../components'
+import {BottomTabs,Header,Gaps} from '../../components'
 
 const Cart = ({navigation}) => {
   return (
-    <View>
-      <Header title='Cart' burger={true} left={140}/>
+    <View style={{flex:1,backgroundColor:'#fff'}}>
+      <Header title='Cart' burger={true} left={180}/>
+      <Gaps/>
       <Text>Cart</Text>
       <BottomTabs
         home={()=>navigation.navigate('Home')}

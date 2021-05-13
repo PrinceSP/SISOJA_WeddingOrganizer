@@ -8,11 +8,11 @@ const Packets = ({title,price,one,two,three,four,five,choose}) => {
   let image;
 
   if (choose===1) {
-    image = <Packet1 height={354}/>
+    image = <Packet1 height={359}/>
   } else if (choose===2){
     image = <Packet2 height={354}/>
   } else{
-    image = <Packet3 height={354}/>
+    image = <Packet3 height={357.5}/>
   }
 
   const addToCart=()=>{
