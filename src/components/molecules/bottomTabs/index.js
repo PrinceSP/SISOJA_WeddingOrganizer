@@ -1,6 +1,6 @@
 import React from 'react'
 import {View,Text,TouchableOpacity} from 'react-native'
-import {ProfileUnactive,CartUnactive,Home} from '../../../assets'
+import {ProfileUnactive,CartUnactive,HomeUnactive} from '../../../assets'
 import {createBottomTabNavigation} from '@react-navigation/bottom-tabs'
 
 const BottomTabs = ({home,cart,profile}) => {
@@ -12,9 +12,10 @@ const BottomTabs = ({home,cart,profile}) => {
       width:'100%',
       position:'absolute',
       bottom:0,
-      backgroundColor:'#fff'}}>
+      backgroundColor:'#fff',
+      height:70}}>
       <TouchableOpacity onPress={home}>
-        <Home/>
+        <HomeUnactive/>
       </TouchableOpacity>
       <TouchableOpacity onPress={cart}>
         <CartUnactive/>
